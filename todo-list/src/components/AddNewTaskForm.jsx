@@ -4,6 +4,8 @@ import Button from "./Button.jsx";
 const AddNewTaskForm = (props) => {
     const {
         addTask,
+        newTaskTitle,
+        setNewTaskTitle,
     } = props
 
     const onSubmit = (event) => {
@@ -17,6 +19,8 @@ const AddNewTaskForm = (props) => {
                 className={"todo__form"}
                 lable="New task item"
                 id="new-task"
+                value={newTaskTitle}
+                onInput={(event)=>{setNewTaskTitle(event.target.value)}}
             />
             <Button
                 type="submit"
